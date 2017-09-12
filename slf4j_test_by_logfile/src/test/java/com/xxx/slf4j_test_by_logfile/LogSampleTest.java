@@ -29,15 +29,15 @@ public class LogSampleTest {
                 .getLogger(ch.qos.logback.classic.Logger.ROOT_LOGGER_NAME);
 
         // reloading logback configuration file.
-        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
-        JoranConfigurator configurator = new JoranConfigurator();
-        configurator.setContext(lc);
-        lc.reset();
-        try {
-            configurator.doConfigure(logbackPath);
-        } catch (JoranException ex) {
-            ex.printStackTrace();
-        }
+//        LoggerContext lc = (LoggerContext) LoggerFactory.getILoggerFactory();
+//        JoranConfigurator configurator = new JoranConfigurator();
+//        configurator.setContext(lc);
+//        lc.reset();
+//        try {
+//            configurator.doConfigure(logbackPath);
+//        } catch (JoranException ex) {
+//            ex.printStackTrace();
+//        }
 
         // make mock of appender
         @SuppressWarnings("unchecked")
@@ -46,7 +46,7 @@ public class LogSampleTest {
         logger.addAppender(mockAppender);
 
         LogSample _ = new LogSample();
-        _.outputLog("This message is for Test");
+        _.outputLog("This message is for Tes");
 
         // ArgumentCaptor<Appender> argumentCaptor = ArgumentCaptor.forClass(Appender.class);
         // Mockito.verify(mockAppender).doAppend((ILoggingEvent) argumentCaptor.capture());
